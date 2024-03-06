@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://cmdldhokoh555"]
+
+[ext_resource type="Script" path="res://Joint.gd" id="1_epmox"]
+[ext_resource type="Texture2D" uid="uid://dbl3hdf226w2u" path="res://joint.png" id="2_ww3lk"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ieuw2"]
+friction = 0.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_c5r4l"]
+
+[node name="Joint" type="RigidBody2D"]
+collision_layer = 0
+collision_mask = 0
+physics_material_override = SubResource("PhysicsMaterial_ieuw2")
+gravity_scale = 0.2
+linear_damp = 40.0
+script = ExtResource("1_epmox")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.165, 0.165)
+texture = ExtResource("2_ww3lk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_c5r4l")

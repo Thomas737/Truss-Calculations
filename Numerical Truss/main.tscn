@@ -1,0 +1,59 @@
+[gd_scene load_steps=4 format=3 uid="uid://b5svw8erxlckq"]
+
+[ext_resource type="Script" path="res://JointContainer.gd" id="1_7f22y"]
+[ext_resource type="PackedScene" uid="uid://cmdldhokoh555" path="res://joint.tscn" id="1_hu3ah"]
+[ext_resource type="Script" path="res://MainCamera.gd" id="3_5c3sv"]
+
+[node name="Main" type="Node2D"]
+
+[node name="JointContainer" type="Node2D" parent="."]
+script = ExtResource("1_7f22y")
+
+[node name="0ML" parent="JointContainer" instance=ExtResource("1_hu3ah")]
+position = Vector2(-68, 160)
+static_joint = true
+
+[node name="0L" parent="JointContainer" instance=ExtResource("1_hu3ah")]
+position = Vector2(-168, 160)
+static_joint = true
+
+[node name="0MR" parent="JointContainer" instance=ExtResource("1_hu3ah")]
+position = Vector2(47, 159)
+static_joint = true
+
+[node name="0R" parent="JointContainer" instance=ExtResource("1_hu3ah")]
+position = Vector2(147, 158)
+static_joint = true
+
+[node name="Joint3" parent="JointContainer" node_paths=PackedStringArray("single_connected_joints", "double_connected_joints") instance=ExtResource("1_hu3ah")]
+position = Vector2(-66, 51)
+single_connected_joints = [NodePath("../Joint4"), NodePath("../0MR")]
+double_connected_joints = [NodePath("../0ML")]
+
+[node name="Joint4" parent="JointContainer" node_paths=PackedStringArray("single_connected_joints", "double_connected_joints") instance=ExtResource("1_hu3ah")]
+position = Vector2(45, 52)
+single_connected_joints = [NodePath("../Joint3")]
+double_connected_joints = [NodePath("../0MR")]
+
+[node name="Joint5" parent="JointContainer" node_paths=PackedStringArray("single_connected_joints", "double_connected_joints") instance=ExtResource("1_hu3ah")]
+position = Vector2(-68, -51)
+single_connected_joints = [NodePath("../Joint4"), NodePath("../Joint6")]
+double_connected_joints = [NodePath("../Joint3"), NodePath("../0L")]
+
+[node name="Joint6" parent="JointContainer" node_paths=PackedStringArray("single_connected_joints", "double_connected_joints") instance=ExtResource("1_hu3ah")]
+position = Vector2(41, -52)
+single_connected_joints = [NodePath("../Joint5")]
+double_connected_joints = [NodePath("../Joint4"), NodePath("../0R")]
+
+[node name="Joint7" parent="JointContainer" node_paths=PackedStringArray("single_connected_joints", "double_connected_joints") instance=ExtResource("1_hu3ah")]
+position = Vector2(-67, -151)
+single_connected_joints = [NodePath("../Joint8"), NodePath("../Joint6")]
+double_connected_joints = [NodePath("../Joint5")]
+
+[node name="Joint8" parent="JointContainer" node_paths=PackedStringArray("single_connected_joints", "double_connected_joints") instance=ExtResource("1_hu3ah")]
+position = Vector2(39, -152)
+single_connected_joints = [NodePath("../Joint7")]
+double_connected_joints = [NodePath("../Joint6")]
+
+[node name="MainCamera" type="Camera2D" parent="."]
+script = ExtResource("3_5c3sv")
