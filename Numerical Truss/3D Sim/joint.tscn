@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bbmjotexvquya"]
+
+[ext_resource type="Script" path="res://3D Sim/joint.gd" id="1_su4vn"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_awyl4"]
+
+[node name="Joint" type="RigidBody3D"]
+script = ExtResource("1_su4vn")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_awyl4")

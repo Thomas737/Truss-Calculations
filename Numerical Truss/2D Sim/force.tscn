@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://bs0x51y4aerx7"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_gcldw"]
-font_size = 32
+font_size = 64
 
 [node name="Force" type="Label"]
 z_index = 1

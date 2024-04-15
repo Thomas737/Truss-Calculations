@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cmdldhokoh555"]
 
-[ext_resource type="Script" path="res://Joint.gd" id="1_epmox"]
-[ext_resource type="Texture2D" uid="uid://dbl3hdf226w2u" path="res://joint.png" id="2_ww3lk"]
+[ext_resource type="Script" path="res://2D Sim/Joint.gd" id="1_epmox"]
+[ext_resource type="Texture2D" uid="uid://dbl3hdf226w2u" path="res://2D Sim/joint.png" id="2_ww3lk"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ieuw2"]
 friction = 0.0

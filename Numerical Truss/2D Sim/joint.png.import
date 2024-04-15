@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dbl3hdf226w2u"
-path="res://.godot/imported/joint.png-70ab08f296c77daed018ad2945d93fe5.ctex"
+path="res://.godot/imported/joint.png-13105a115e283d0de30ba4da5b934ed8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://joint.png"
-dest_files=["res://.godot/imported/joint.png-70ab08f296c77daed018ad2945d93fe5.ctex"]
+source_file="res://2D Sim/joint.png"
+dest_files=["res://.godot/imported/joint.png-13105a115e283d0de30ba4da5b934ed8.ctex"]
 
 [params]
 

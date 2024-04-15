@@ -1,11 +1,9 @@
-extends RigidBody2D
-
-const force_label = preload("res://force.tscn")
+extends RigidBody3D
 
 @export var static_joint = false
 
-@export var single_connected_joints: Array[RigidBody2D]
-@export var double_connected_joints: Array[RigidBody2D]
+@export var single_connected_joints: Array[RigidBody3D]
+@export var double_connected_joints: Array[RigidBody3D]
 
 var joints = {} # joints[RigidBody2D] = [L, A, Label]
 var forces = {} # forces[RigidBody2D] = F
@@ -17,10 +15,10 @@ func _ready():
 func apply_joint_connections():
 	for joint in double_connected_joints:
 		joints[joint] = [position.distance_to(joint.position), 51, new_force_label()]
-		forces[joint] = Vector2.ZERO
+		forces[joint] = Vector3.ZERO
 	for joint in single_connected_joints:
 		joints[joint] = [position.distance_to(joint.position), 30, new_force_label()]
-		forces[joint] = Vector2.ZERO
+		forces[joint] = Vector3.ZERO
 
 func new_force_label():
 	var label = force_label.instantiate()
