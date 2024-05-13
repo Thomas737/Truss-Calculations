@@ -85,5 +85,26 @@ double_connected_joints = [NodePath("../Joint4"), NodePath("../0R")]
 position = Vector2(-177, 161)
 static_joint = true
 
+[node name="0ML2" parent="JointContainer" instance=ExtResource("1_hu3ah")]
+position = Vector2(325, 163)
+static_joint = true
+
+[node name="0ML3" parent="JointContainer" instance=ExtResource("1_hu3ah")]
+position = Vector2(498, 165)
+static_joint = true
+
+[node name="Joint" parent="JointContainer" node_paths=PackedStringArray("double_connected_joints") instance=ExtResource("1_hu3ah")]
+position = Vector2(325, 39)
+double_connected_joints = [NodePath("../0ML2")]
+
+[node name="Joint2" parent="JointContainer" node_paths=PackedStringArray("single_connected_joints", "double_connected_joints") instance=ExtResource("1_hu3ah")]
+position = Vector2(496, 89)
+single_connected_joints = [NodePath("../Joint"), NodePath("../0R3")]
+double_connected_joints = [NodePath("../0ML3")]
+
+[node name="0R3" parent="JointContainer" instance=ExtResource("1_hu3ah")]
+position = Vector2(688, 170)
+static_joint = true
+
 [node name="MainCamera" type="Camera2D" parent="."]
 script = ExtResource("3_5c3sv")
