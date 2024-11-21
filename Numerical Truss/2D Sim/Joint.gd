@@ -2,7 +2,11 @@ extends RigidBody2D
 
 const force_label = preload("res://2D Sim/force.tscn")
 
+var weight_multiplier: float = 1
+var original_mass: float
+
 @export var static_joint = false
+@export var variable_mass = false
 
 @export var single_connected_joints: Array[RigidBody2D]
 @export var double_connected_joints: Array[RigidBody2D]
@@ -13,6 +17,7 @@ var forces = {} # forces[RigidBody2D] = F
 func _ready():
 	if static_joint:
 		gravity_scale = 0
+	original_mass = mass
 
 func apply_joint_connections():
 	for joint in double_connected_joints:
@@ -27,7 +32,17 @@ func new_force_label():
 	add_child(label)
 	return label
 
-func _process(delta):
+func _input(event: InputEvent) -> void:
+	if not variable_mass:
+		return
+	if event.is_action_pressed("increase_weight"):
+		print("here")
+		weight_multiplier += 1
+	if event.is_action_pressed("decrease_weight"):
+		weight_multiplier -= 1
+	mass = original_mass * weight_multiplier
+
+func _physics_process(delta: float) -> void:
 	constant_force = Vector2.ZERO
 	
 	if not static_joint:
@@ -52,3 +67,5 @@ func _draw():
 		joints[joint][2].position = label_position
 		joints[joint][2].text = str(int(forces[joint].length()/10))
 		draw_line(Vector2.ZERO, label_position, Color(0.5,0,0), 3)
+	if not static_joint:
+		draw_line(Vector2.ZERO, Vector2.DOWN*mass*100, Color.GREEN, 2)

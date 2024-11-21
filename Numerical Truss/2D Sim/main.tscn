@@ -10,101 +10,145 @@
 script = ExtResource("1_7f22y")
 
 [node name="0ML" parent="JointContainer" instance=ExtResource("1_hu3ah")]
-position = Vector2(-68, 160)
+position = Vector2(-1297, 394)
 static_joint = true
 
 [node name="0MR" parent="JointContainer" instance=ExtResource("1_hu3ah")]
-position = Vector2(47, 159)
+position = Vector2(-1182, 393)
 static_joint = true
 
 [node name="0R" parent="JointContainer" instance=ExtResource("1_hu3ah")]
-position = Vector2(147, 158)
+position = Vector2(-1082, 392)
 static_joint = true
 
 [node name="Joint3" parent="JointContainer" node_paths=PackedStringArray("single_connected_joints", "double_connected_joints") instance=ExtResource("1_hu3ah")]
-position = Vector2(-66, 51)
+position = Vector2(-1295, 285)
 single_connected_joints = [NodePath("../Joint4"), NodePath("../0MR")]
 double_connected_joints = [NodePath("../0ML")]
 
 [node name="Joint4" parent="JointContainer" node_paths=PackedStringArray("single_connected_joints", "double_connected_joints") instance=ExtResource("1_hu3ah")]
-position = Vector2(45, 52)
+position = Vector2(-1184, 286)
 single_connected_joints = [NodePath("../0ML")]
 double_connected_joints = [NodePath("../0MR")]
 
 [node name="Joint5" parent="JointContainer" node_paths=PackedStringArray("single_connected_joints", "double_connected_joints") instance=ExtResource("1_hu3ah")]
-position = Vector2(-64, -240)
+position = Vector2(-1293, -6)
 single_connected_joints = [NodePath("../Joint11"), NodePath("../Joint6")]
 double_connected_joints = [NodePath("../Joint10")]
 
 [node name="Joint6" parent="JointContainer" node_paths=PackedStringArray("single_connected_joints", "double_connected_joints") instance=ExtResource("1_hu3ah")]
-position = Vector2(45, -241)
+position = Vector2(-1184, -7)
 single_connected_joints = [NodePath("../Joint10")]
 double_connected_joints = [NodePath("../Joint11")]
 
 [node name="Joint7" parent="JointContainer" node_paths=PackedStringArray("single_connected_joints", "double_connected_joints") instance=ExtResource("1_hu3ah")]
-position = Vector2(-63, -340)
+position = Vector2(-1292, -106)
 single_connected_joints = [NodePath("../Joint8"), NodePath("../Joint6")]
 double_connected_joints = [NodePath("../Joint5")]
 
 [node name="Joint8" parent="JointContainer" node_paths=PackedStringArray("single_connected_joints", "double_connected_joints") instance=ExtResource("1_hu3ah")]
-position = Vector2(43, -341)
+position = Vector2(-1186, -107)
 single_connected_joints = [NodePath("../Joint7"), NodePath("../Joint5")]
 double_connected_joints = [NodePath("../Joint6")]
 
 [node name="Joint9" parent="JointContainer" node_paths=PackedStringArray("single_connected_joints", "double_connected_joints") instance=ExtResource("1_hu3ah")]
-position = Vector2(145, -340)
+position = Vector2(-1084, -106)
 mass = 0.2
 single_connected_joints = [NodePath("../Joint8"), NodePath("../Joint6")]
 double_connected_joints = [NodePath("../Joint6")]
 
 [node name="Joint10" parent="JointContainer" node_paths=PackedStringArray("single_connected_joints", "double_connected_joints") instance=ExtResource("1_hu3ah")]
-position = Vector2(-64, -143)
+position = Vector2(-1293, 91)
 mass = 0.2
 single_connected_joints = [NodePath("../Joint13"), NodePath("../Joint11")]
 double_connected_joints = [NodePath("../Joint12")]
 
 [node name="Joint11" parent="JointContainer" node_paths=PackedStringArray("single_connected_joints", "double_connected_joints") instance=ExtResource("1_hu3ah")]
-position = Vector2(46, -145)
+position = Vector2(-1183, 89)
 mass = 0.2
 single_connected_joints = [NodePath("../Joint12")]
 double_connected_joints = [NodePath("../Joint13")]
 
 [node name="Joint12" parent="JointContainer" node_paths=PackedStringArray("single_connected_joints", "double_connected_joints") instance=ExtResource("1_hu3ah")]
-position = Vector2(-63, -47)
+position = Vector2(-1292, 187)
 mass = 0.2
 single_connected_joints = [NodePath("../Joint13"), NodePath("../Joint4")]
 double_connected_joints = [NodePath("../Joint3"), NodePath("../0R2")]
 
 [node name="Joint13" parent="JointContainer" node_paths=PackedStringArray("single_connected_joints", "double_connected_joints") instance=ExtResource("1_hu3ah")]
-position = Vector2(49, -48)
+position = Vector2(-1180, 186)
 mass = 0.2
 single_connected_joints = [NodePath("../Joint3")]
 double_connected_joints = [NodePath("../Joint4"), NodePath("../0R")]
 
 [node name="0R2" parent="JointContainer" instance=ExtResource("1_hu3ah")]
-position = Vector2(-177, 161)
+position = Vector2(-1406, 395)
 static_joint = true
 
 [node name="0ML2" parent="JointContainer" instance=ExtResource("1_hu3ah")]
-position = Vector2(325, 163)
+position = Vector2(-904, 397)
 static_joint = true
 
 [node name="0ML3" parent="JointContainer" instance=ExtResource("1_hu3ah")]
-position = Vector2(498, 165)
+position = Vector2(-731, 399)
 static_joint = true
 
 [node name="Joint" parent="JointContainer" node_paths=PackedStringArray("double_connected_joints") instance=ExtResource("1_hu3ah")]
-position = Vector2(325, 39)
+position = Vector2(-904, 273)
 double_connected_joints = [NodePath("../0ML2")]
 
 [node name="Joint2" parent="JointContainer" node_paths=PackedStringArray("single_connected_joints", "double_connected_joints") instance=ExtResource("1_hu3ah")]
-position = Vector2(496, 89)
+position = Vector2(-733, 323)
 single_connected_joints = [NodePath("../Joint"), NodePath("../0R3")]
 double_connected_joints = [NodePath("../0ML3")]
 
 [node name="0R3" parent="JointContainer" instance=ExtResource("1_hu3ah")]
-position = Vector2(688, 170)
+position = Vector2(-541, 404)
 static_joint = true
+
+[node name="Joint14" parent="JointContainer" node_paths=PackedStringArray("single_connected_joints") instance=ExtResource("1_hu3ah")]
+mass = 0.03
+static_joint = true
+single_connected_joints = [NodePath("../Joint18"), NodePath("../Joint15")]
+
+[node name="Joint15" parent="JointContainer" node_paths=PackedStringArray("single_connected_joints", "double_connected_joints") instance=ExtResource("1_hu3ah")]
+position = Vector2(200, 0)
+mass = 0.03
+single_connected_joints = [NodePath("../Joint19"), NodePath("../Joint16")]
+double_connected_joints = [NodePath("../Joint18")]
+
+[node name="Joint16" parent="JointContainer" node_paths=PackedStringArray("single_connected_joints", "double_connected_joints") instance=ExtResource("1_hu3ah")]
+position = Vector2(400, 0)
+mass = 0.03
+single_connected_joints = [NodePath("../Joint17")]
+double_connected_joints = [NodePath("../Joint22")]
+
+[node name="Joint17" parent="JointContainer" instance=ExtResource("1_hu3ah")]
+position = Vector2(600, 0)
+mass = 0.03
+variable_mass = true
+
+[node name="Joint18" parent="JointContainer" instance=ExtResource("1_hu3ah")]
+position = Vector2(100, 173.205)
+mass = 0.03
+
+[node name="Joint19" parent="JointContainer" node_paths=PackedStringArray("single_connected_joints", "double_connected_joints") instance=ExtResource("1_hu3ah")]
+position = Vector2(300, 173.205)
+mass = 0.03
+single_connected_joints = [NodePath("../Joint18"), NodePath("../Joint20")]
+double_connected_joints = [NodePath("../Joint16")]
+
+[node name="Joint20" parent="JointContainer" node_paths=PackedStringArray("single_connected_joints", "double_connected_joints") instance=ExtResource("1_hu3ah")]
+position = Vector2(500, 173.205)
+mass = 0.03
+single_connected_joints = [NodePath("../Joint16")]
+double_connected_joints = [NodePath("../Joint17")]
+
+[node name="Joint22" parent="JointContainer" node_paths=PackedStringArray("double_connected_joints") instance=ExtResource("1_hu3ah")]
+position = Vector2(0, -600)
+mass = 0.03
+static_joint = true
+double_connected_joints = [NodePath("../Joint16")]
 
 [node name="MainCamera" type="Camera2D" parent="."]
 script = ExtResource("3_5c3sv")
