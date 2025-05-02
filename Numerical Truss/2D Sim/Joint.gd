@@ -36,10 +36,10 @@ func _input(event: InputEvent) -> void:
 	if not variable_mass:
 		return
 	if event.is_action_pressed("increase_weight"):
-		print("here")
 		weight_multiplier += 1
 	if event.is_action_pressed("decrease_weight"):
 		weight_multiplier -= 1
+	weight_multiplier = clamp(weight_multiplier, 0, INF)
 	mass = original_mass * weight_multiplier
 
 func _physics_process(delta: float) -> void:
@@ -68,4 +68,4 @@ func _draw():
 		joints[joint][2].text = str(int(forces[joint].length()/10))
 		draw_line(Vector2.ZERO, label_position, Color(0.5,0,0), 3)
 	if not static_joint:
-		draw_line(Vector2.ZERO, Vector2.DOWN*mass*100, Color.GREEN, 2)
+		draw_line(Vector2.ZERO, Vector2.DOWN*mass*100, Color.DARK_GREEN, 2)

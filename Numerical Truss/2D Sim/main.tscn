@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://b5svw8erxlckq"]
 
-[ext_resource type="Script" path="res://2D Sim/JointContainer.gd" id="1_7f22y"]
+[ext_resource type="Script" uid="uid://8fvb2ypxqqlu" path="res://2D Sim/JointContainer.gd" id="1_7f22y"]
 [ext_resource type="PackedScene" uid="uid://cmdldhokoh555" path="res://2D Sim/joint.tscn" id="1_hu3ah"]
-[ext_resource type="Script" path="res://2D Sim/MainCamera.gd" id="3_5c3sv"]
+[ext_resource type="Script" uid="uid://bgadnpnfuenfw" path="res://2D Sim/MainCamera.gd" id="3_5c3sv"]
 
 [node name="Main" type="Node2D"]
 
